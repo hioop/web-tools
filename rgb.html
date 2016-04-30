@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RGB、HEX、HSL等颜色形式之间的相互转换</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type='text/javascript' src='http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js'></script>
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css"> 
+       </head>
+    <body>
+       
+       <header class="navbar navbar-default navbar-fixed-top" id="top" role="banner">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+              <a href="/" class="navbar-brand" style="padding:2px;"><img src="/web-tools/Images/logo.png" style="width:116px;"></a>
+          </div>
+          <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://www.hioop.com" target="_blank">我的个人主页</a></li>
+            </ul>
+          </nav>
+        </div>
+</header>
+
+
+<script type="text/javascript" src="/web-tools/Js/rgb.js"></script>
+<div class="container" style="min-height: 500px;"> 
+    <div class="row" align="center">
+        <h3>RGB、HEX、HSL等颜色形式之间的相互转换</h3>
+        <hr />
+    </div>
+    
+    <div align="center" style="margin-top: 20px;"> 
+        <form class="form-inline" role="form">
+           
+            <div class="form-group">
+                <div class="input-group">
+                   <div class="input-group-addon">RGB</div>
+                   <input class="form-control" type="text" placeholder="输入RGB值" id="rgb"> 
+                </div>
+                <input type="button" onclick="convertColor('rgb')" value="转换" class="input btn btn-primary">
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                   <div class="input-group-addon">HEX</div>
+                   <input class="form-control" type="text" placeholder="输入HEX值" id="hex"> 
+                </div>
+                <input type="button" onclick="convertColor('hex')" value="转换" class="input btn btn-primary">
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                   <div class="input-group-addon">HSL</div>
+                   <input class="form-control" type="text" placeholder="输入HSL值" id="hsl"> 
+                </div>
+                <input type="button" onclick="convertColor('hsl')" value="转换" class="input btn btn-primary">
+            </div>
+
+          </form>
+    </div>
+    
+    <div class="container" style="height:150px;" > 
+        <p>输出面板：</p>
+        <p id="color"></p>
+        
+    </div>
+    <div class="row"><em>说明：</em>本应用支持RGB、HEX、HSL等常见的颜色表现形式之间的相互转换。输入指定形式的颜色，点击对应的转换按钮，即可直接输出该颜色的所有表现形式。<br>1、<span class="blue">RGB</span>输入不限制格式，只要包含3个合格的整数即可。例如：<code>rgb(255, 0, 0)</code>、<code>254,234,0</code>、<code>255，0，255</code>。<br>2、<span class="blue">HEX</span>输入只需要包含3位或6位十六进制的数字即可。例如：<code>#fff</code>、<code>#fefefe</code>、<code>808080</code>、<code>235</code>。<br>3、<span class="blue">HSL</span>输入只需要包含3个合格的数字(包括小数)，最后两个数字需要带%号，以便于与RGB进行区分。例如：<code>hsl(60°,100%,25%)</code>、<code>180°，50%，75%</code>、<code>30,100%,75%</code>、<code>34°, 89.5%, 52.4%</code>。<br>备注：由于HSL涉及到浮点数计算，可能存在较小的精度问题。</div>
+
+</div>
+
+
+
+<div class="container">
+    <div class='row'>
+        <p style=" padding: 10px 0 15px;text-align: center;">
+        Copyright &copy; 2016   . All Rights Reserved. Current version is beta 0.4 </p>
+    </div>
+
+    <style>*{font-family: "Microsoft YaHei","Arial","SimSun"}body { padding-top: 60px; }a:hover{text-decoration: none;}</style>
+    
+    </div>
+    </body>
+</html>

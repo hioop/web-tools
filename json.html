@@ -19,12 +19,9 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-              <a href="/" class"navbar-brand" style="padding:2px;"><img src="/web-tools/Images/logo.png" style="width:116px;"></a>
+              <a href="/" class="navbar-brand" style="padding:2px;"><img src="/web-tools/Images/logo.png" style="width:116px;"></a>
           </div>
           <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav">
-                <li><a href="#">About</a></li>
-            </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="http://www.hioop.com" target="_blank">我的个人主页</a></li>
             </ul>
@@ -52,11 +49,12 @@
             <input type="button" class=" btn btn-primary" onclick="Process();" value="JSON着色">
             <input type="button" class=" btn btn-primary" onclick="compressJson(1);" value="压缩JSON">
             <input type="button" class=" btn btn-primary" onclick="compressJson(2);" value="转义JSON">
-            <input type="button" class=" btn btn-primary" onclick="compressJson(3);" value="压缩并转义">
-            <input type="button" class=" btn btn-primary" onclick="compressJson(4);" value="去除转义">
-            <input type="button" class=" btn btn-primary" onclick="u2h();" value="Unicode转中文">
-            <input type="button" class=" btn btn-primary" onclick="h2u();" value="中文转Unicode">
-            <input type="button" class=" btn btn-primary" onclick="cnChar2EnChar();" value="中文符号转英文符号">
+            <input type="button" class=" btn btn-info" onclick="compressJson(3);" value="压缩并转义">
+            <input type="button" class=" btn btn-info" onclick="compressJson(4);" value="去除转义">
+            <br /><br />
+            <input type="button" class=" btn btn-success" onclick="u2h();" value="Unicode转中文">
+            <input type="button" class=" btn btn-success" onclick="h2u();" value="中文转Unicode">
+            <input type="button" class=" btn btn-success" onclick="cnChar2EnChar();" value="中文符号转英文符号">
         </div>
     </form>
     <div id="results_header" class="hide">
@@ -64,14 +62,14 @@
     </div>
 </div>
  <div class="container">
-    <div role="alert" class="alert " id="results"></div>
-    <div id="Canvas" class="Canvas alert alert-success" style="display:none" role="alert" ></div> 
+    <div role="alert" class="alert" id="results"></div>
+    <div id="Canvas" class="Canvas alert alert-success" style="display:none"></div> 
 </div>
 
 <div class="container">
     <div class='row'>
         <p style=" padding: 10px 0 15px;text-align: center;">
-        <a href="#" title="">about</a>   <br>Copyright &copy; 2016   . All Rights Reserved. Current version is beta 0.4 </p>
+        Copyright &copy; 2016   . All Rights Reserved. Current version is beta 0.4 </p>
     </div>
 
     <style>*{font-family: "Microsoft YaHei","Arial","SimSun"}body { padding-top: 60px; }a:hover{text-decoration: none;}</style>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>在线JavaScript/HTML工具</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type='text/javascript' src='http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js'></script>
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css"> 
+       </head>
+    <body>
+       
+       <header class="navbar navbar-default navbar-fixed-top" id="top" role="banner">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+              <a href="/" class="navbar-brand" style="padding:2px;"><img src="/web-tools/Images/logo.png" style="width:116px;"></a>
+          </div>
+          <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://www.hioop.com" target="_blank">我的个人主页</a></li>
+            </ul>
+          </nav>
+        </div>
+</header>
+<script type="text/javascript" src="/web-tools/Js/json/jquery.linedtextarea.js"></script>
+<link rel="stylesheet" type="text/css" href="/web-tools/Css/json/jquery.linedtextarea.css" />
+<script type="text/javascript" src="/web-tools/Js/jshtmlformat.js"></script>
+<link rel="stylesheet" type="text/css" href="/web-tools/Css/json/json.css" />
+
+<div class="container" style="min-height: 500px;"> 
+    <div class="row" align="center">
+        <h3>在线JavaScript/HTML工具</h3>
+        <hr />
+        <textarea id="content" placeholder="请输入Javascript 或者 HTML 代码" name="content" style="width:80%;border:1px solid #c5e2f2;height:305px; overflow:visible;" cols="20" rows="100"></textarea>
+    </div>
+
+    <div class="row" align="center" style="margin-top: 20px;"> 
+        <select name="tabsize" id="tabsize" class="form-control-static">
+            <option selected="selected" value="1">制表符缩进</option>
+            <option value="2">2个空格缩进</option>
+            <option value="4">4个空格缩进</option>
+            <option value="8">8个空格缩进</option>
+        </select>
+
+        <input value="格式化" onclick="return do_js_beautify();" id="beautify" type="button"  class=" btn btn-primary" />
+        <input value="普通压缩" onclick="pack_js(0);" type="button" class=" btn btn-primary" />
+        <input value="加密压缩" onclick="pack_js(1);" type="button" class=" btn btn-primary" />
+        <input value="JS/HTML互转" onclick="change();" type="button" class=" btn btn-primary" />
+        <input value="清空结果" onclick="Empty();" type="button" class=" btn btn-primary" />
+        <input value="js解密" onclick="jsbeauty();" type="button" class=" btn btn-primary" />
+    </div>
+</div>
+<script type="text/javascript">
+    setTimeout("GetFocus();", 10);
+</script>
+
+<script type="text/javascript">
+
+    function Empty() {
+        jQuery("#txtInitCode").val('');
+    }
+
+    function jsbeauty() {
+        var source = jQuery('#content').val(),
+                output,
+                opts = {};
+        
+        opts.indent_size = 4;
+        opts.indent_char = ' ';
+        opts.max_preserve_newlines = 5;
+        opts.preserve_newlines = opts.max_preserve_newlines !== "-1";
+        opts.keep_array_indentation = false;
+        opts.break_chained_methods = false;
+        opts.indent_scripts = 'normal';
+        opts.brace_style = 'collapse';
+        opts.space_before_conditional = true;
+        opts.unescape_strings = false;
+        opts.jslint_happy = false;
+        opts.wrap_line_length = 0;
+        opts.space_after_anon_function = true;
+        source = unpacker_filter(source);
+        output = js_beautify(source, opts);
+        jQuery('#content').val(output);
+    }
+
+    function unpacker_filter(source) {
+        var trailing_comments = '',
+                comment = '',
+                unpacked = '',
+                found = false;
+
+        do {
+            found = false;
+            if (/^\s*\/\*/.test(source)) {
+                found = true;
+                comment = source.substr(0, source.indexOf('*/') + 2);
+                source = source.substr(comment.length).replace(/^\s+/, '');
+                trailing_comments += comment + "\n";
+            } else if (/^\s*\/\//.test(source)) {
+                found = true;
+                comment = source.match(/^\s*\/\/.*/)[0];
+                source = source.substr(comment.length).replace(/^\s+/, '');
+                trailing_comments += comment + "\n";
+            }
+        } while (found);
+
+        var unpackers = [P_A_C_K_E_R, Urlencoded, MyObfuscate];
+        for (var i = 0; i < unpackers.length; i++) {
+            if (unpackers[i].detect(source)) {
+                unpacked = unpackers[i].unpack(source);
+                if (unpacked != source) {
+                    source = unpacker_filter(unpacked);
+                }
+            }
+        }
+        return trailing_comments + source;
+    }
+ 
+    function error(css,msg) {
+        jQuery("#errormsg").removeClass().addClass(css).html(msg);
+        setTimeout('jQuery("#errormsg").removeClass().html("")', 3000);
+    }
+</script>
+
+
+<div class="container">
+    <div class='row'>
+        <p style=" padding: 10px 0 15px;text-align: center;">
+        Copyright &copy; 2016   . All Rights Reserved. Current version is beta 0.4 </p>
+    </div>
+
+    <style>*{font-family: "Microsoft YaHei","Arial","SimSun"}body { padding-top: 60px; }a:hover{text-decoration: none;}</style>
+    
+    </div>
+    </body>
+</html>

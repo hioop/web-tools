@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>在线工具</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type='text/javascript' src='http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js'></script>
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css"> 
+       </head>
+    <body>
+       
+       <header class="navbar navbar-default navbar-fixed-top" id="top" role="banner">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+              <a href="/" class="navbar-brand" style="padding:2px;"><img src="/web-tools/Images/logo.png" style="width:116px;"></a>
+          </div>
+          <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://www.hioop.com" target="_blank">我的个人主页</a></li>
+            </ul>
+          </nav>
+        </div>
+</header>
+
+
+<div class="container">
+            <h1>在线迷宫小游戏 | 无限关卡版 - hioop在线工具</h1>
+    
+            <div class="stat" style="margin-left: 300px;">
+                <red>
+                    已走步数: 
+                    <span id="step">0</span> 完成次数: 
+                    <span id="complete">0</span>
+                </red>
+            </div>
+            <canvas height="393" width="328" id="canvas" style="background:#eeeeee; margin-left: 300px;margin-top: 20px;"></canvas>
+            <script type="text/javascript" src="/web-tools/Js/maze.js"></script>
+            <hr>
+            <br>
+            <h2>关于本游戏</h2>
+            <p>好玩不好玩自己试了才知道</p>
+            使用键盘方向键 
+            <div class='btn btn-default btn-lg'>
+                <kbd><span class="glyphicon glyphicon-arrow-left"></span></kbd>
+            </div>
+            
+            <div class='btn btn-default btn-lg'>
+                <kbd><span class="glyphicon glyphicon-arrow-up"></span></kbd>
+            </div>
+            <div class='btn btn-default btn-lg'>
+                <kbd><span class="glyphicon glyphicon-arrow-down"></span></kbd>
+            </div>
+            <div class='btn btn-default btn-lg'>
+                <kbd><span class="glyphicon glyphicon-arrow-right"></span></kbd>
+            </div>
+            完成游戏，并进入下一关，并会记录下游戏步数和关卡数.
+           
+                <br />
+             
+        </div>
+
+
+
+<div class="container">
+    <div class='row'>
+        <p style=" padding: 10px 0 15px;text-align: center;">
+        Copyright &copy; 2016   . All Rights Reserved. Current version is beta 0.4 </p>
+    </div>
+
+    <style>*{font-family: "Microsoft YaHei","Arial","SimSun"}body { padding-top: 60px; }a:hover{text-decoration: none;}</style>
+    
+    </div>
+    </body>
+</html>
