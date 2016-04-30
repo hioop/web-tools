@@ -1,0 +1,123 @@
+/* 
+    Created on : 2014-11-20, 20:36:07
+    Author     : admin
+*/
+.json_input {
+	width: 100%;
+	height: 300px;
+	margin: 0;
+	background-color: #EEEEEE;
+	border: 1px solid #EEEEEE;
+	padding: 0 !important;
+}
+.json_input:focus {
+	border-color: transparent;
+	outline: none;
+	background-color: #EEEEEE;
+}
+.unimportant {
+	color: #999;
+	font-size: .9em;
+	font-weight: normal;
+}
+.invisible {
+	filter: alpha(opacity=0);
+	-moz-opacity: .0;
+	opacity: .0;
+}
+#labLink img {
+	vertical-align: middle;
+	margin-bottom: 1em;
+}
+.bold {
+	font-weight: bold;
+}
+.center {
+	text-align: center;
+}
+.big {
+	font-size: 2.5em;
+}
+.bigBorder {
+	border-width: 2px !important;
+}
+a:hover {
+	cursor: pointer;
+}
+/* Overriding of wacky blueprint CSS attributes */
+ 
+em {
+	background-color: transparent !important;
+}
+.greenBorder {
+	border: 1px solid green !important;
+}
+.redBorder {
+	border: 1px solid red !important;
+}
+#results_header {
+	padding-top: 1em;
+}
+.linedwrap {
+	margin-bottom: 10px;
+	background-color: #EEEEEE;
+	padding: 0;
+}
+.linedwrap .codelines {
+	padding: 0;
+}
+.light {
+	color: #AAA;
+}
+/*json 着色部分样式*/
+
+.Canvas {
+	font: 10pt Georgia;
+	background-color: #ECECEC;
+	color: #000000;
+	border: solid 1px #CECECE;
+}
+.ObjectBrace {
+	color: #00AA00;
+	font-weight: bold;
+}
+.ArrayBrace {
+	color: #0033FF;
+	font-weight: bold;
+}
+.PropertyName {
+	color: #CC0000;
+	font-weight: bold;
+}
+.String {
+	color: #007777;
+}
+.Number {
+	color: #AA00AA;
+}
+.Boolean {
+	color: #0000FF;
+}
+.Function {
+	color: #AA6633;
+	text-decoration: italic;
+}
+.Null {
+	color: #0000FF;
+}
+.Comma {
+	color: #000000;
+	font-weight: bold;
+}
+PRE.CodeContainer {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.new {
+	color: red;
+	font-weight: bold;
+}
+a {
+	color: #3366CC;
+	text-decoration: none;
+}
