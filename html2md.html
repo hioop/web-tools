@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>在线工具</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type='text/javascript' src='http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js'></script>
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css"> 
+       </head>
+    <body>
+       
+       <header class="navbar navbar-default navbar-fixed-top" id="top" role="banner">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+              <a href="/" class="navbar-brand" style="padding:2px;"><img src="/web-tools/Images/logo.png" style="width:116px;"></a>
+          </div>
+          <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://www.hioop.com" target="_blank">我的个人主页</a></li>
+            </ul>
+          </nav>
+        </div>
+</header>
+
+
+
+<script type="text/javascript">
+    document.write(unescape("%3Cscript src=\"/web-tools/Js/html2markdown.js\" type='text/javascript'%3E%3C/script%3E")); 
+    </script>
+
+        <script>
+            $(function() {
+                var $input = $('.input');
+                function updateOutput() {
+                    $('.output').text(toMarkdown($input.val()));
+                }
+                updateOutput();
+                $input.keyup(function() {
+                    updateOutput();
+                });
+            });
+        </script> 
+      
+    <div class="container" align="center">
+             <div class="banner clear"> <h3>Html转MarkDown代码</h3> </div> 
+    <hr>
+              
+              
+                <h3>HTML 代码输入:</h3>
+                 <div class="col-xs-12 col-md-8 highlight">
+                    <textarea rows="10" cols="150" class="input">&lt;h3&gt;Some HTML&lt;/h3&gt;
+                        &lt;p&gt;Hello world!   .&lt;/p&gt;
+                        &lt;p&gt; 以下为测试的功能：&lt;/p&gt;
+                        &lt;hr /&gt;
+
+                        &lt;ol&gt;
+                          &lt;li&gt;在线ASCII工具&lt;/li&gt;
+                          &lt;li&gt;在线json工具&lt;/li&gt;
+                          &lt;li&gt;在线生成二维码&lt;/li&gt;
+                          &lt;li&gt;RGB、HEX、HSL等颜色形式之间的相互转换&lt;/li&gt;
+                          &lt;li&gt;Unix时间戳(Unix timestamp)转换工具&lt;/li&gt;
+                        &lt;/ol&gt;
+                        &lt;hr /&gt;
+                        &lt;p&gt;更多工具，To be continue...&lt;/p&gt;
+                    </textarea>
+                </div>
+            </div>
+ 
+        <div class="container">
+            
+            <h3>Markdown 代码输出:</h3>
+            <pre onclick="javascript:this.select();"><code onclick="javascript:this.select();" class="output pre-scrollable"></code></pre> 
+        </div>
+        <div class="container">
+            
+            <h2><code>Markdown</code>介绍</h2>
+             
+            <ul><li><code>Markdown</code> 是一种轻量级标记语言，创始人为约翰·格鲁伯（John Gruber）和亚伦·斯沃茨（Aaron Swartz）。</li></ul>
+            <ul><li>它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的<code>XHTML</code>(或者<code>HTML</code>)文档”。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。</li></ul>
+            <ul><li><code>Markdown</code>中一些特定的字符会被解析为格式化命令，但如果添加一个反斜杠('\')在那些有特殊意义的字符前面，那么字符将被理解为字面意义。</li></ul>
+             
+            <br>
+            <h3><code>Markdown</code>简单语法说明</h3>
+            <dl class="dl-horizontal">   
+                <dt>段落：</dt><dd>一个段落是由一个或多个连续的行构成，段落间靠一个或以上视觉上的空行划分。一般的段落不应该用空格或制表符缩进。</dd>
+                <dt>图片：</dt><dd><code>![logo](http://www.hioop.net/logo.png)</code>。</dd>
+                <dt>换行：</dt><dd>*强调* 或者 _强调_  (示例：斜体)；**加重强调** 或者 __加重强调__ (示例：粗体)；<code>***特别强调***</code> 或者 <code>___特别强调___</code> (示例：粗斜体)</dd>
+                <dt>代码：</dt><dd>要在<code>Markdown</code>中插入代码，你有两种选择。 一种是把代码用反引号(<code>`</code>(键盘上<code>Esc</code>键下面的键)包起。</dd>
+                <dt>标题：</dt><dd>可以在标题内容前输入特定数量的井号<code>('#')</code>来实现对应级别的<code>HTML</code>样式的标题(<code>HTML</code>提供六级标题)。<code>#</code> 一级标题；<code>####</code> 四级标题。</dd>
+                <dt>链接：</dt><dd>[链接文字](链接地址)。例子： <code>[Hioop](http://www.hioop.net/)</code> 。</dd>
+                <dt>换行：</dt><dd>如果想强迫换行，可以在行尾插入至少两个空格。 </dd>
+                <dt>更多的标记移步：</dt><dd><code>http://zh.wikipedia.org/wiki/Markdown</code> </dd>
+            </dl>
+            </div>
+
+
+<div class="container">
+    <div class='row'>
+        <p style=" padding: 10px 0 15px;text-align: center;">
+        Copyright &copy; 2016   . All Rights Reserved. Current version is beta 0.4 </p>
+    </div>
+
+    <style>*{font-family: "Microsoft YaHei","Arial","SimSun"}body { padding-top: 60px; }a:hover{text-decoration: none;}</style>
+    
+    </div>
+    </body>
+</html>
